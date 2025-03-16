@@ -1,0 +1,420 @@
+<html>
+<head>
+<title>CHUCKS</title>
+<link rel="icon" type="image/x-icon" href="./image/bnb.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline:opsz,wght@10..72,100..900&display=swap" rel="stylesheet">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline:opsz,wght@10..72,100..900&family=Big+Shoulders+Stencil:opsz,wght@10..72,100..900&display=swap" rel="stylesheet">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+
+
+<style>
+.b
+{
+width:10vh;
+height:10vh;
+border-radius: 20px;
+}
+.b:hover
+{
+box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.6);
+}
+
+.b1
+{
+width:10vh;
+height:10vh;
+border-radius: 20px;
+background-color:#EB5B00;
+color:#FDFAF6;
+}
+.b1:hover
+{
+box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.6);
+}
+
+#ab
+{
+  background-color:#A0C878;
+  animation: mymove 5s infinite;
+}
+@keyframes mymove {
+  from {background-color:#A0C878;}
+  to {background-color: #89AC46;}
+}
+
+#dix
+{
+  background-color:#F8F3D9;
+  animation: mymove1 5s infinite;
+}
+@keyframes mymove1 {
+  from {background-color:#F8F3D9;}
+  to {background-color: #F6F0F0;}
+}
+</style>
+</head>
+<body style="background-color:#7FA1C3;">
+
+<h2 style="background-image: radial-gradient(#71BBB2,#497D74,#27445D);font-family:Big Shoulders Inline;text-align:center;font-weight:bold;font-size:20vh">
+CHUCKS THE GAME OF CRICKET IN HANDS
+</h2>
+
+
+<p style="font-family:Big Shoulders Stencil;text-align:center;font-weight:bold;font-size:7vh">
+<u>RULES TO PLAY!</u>
+<ul id="listu" style="background-color:#2C3930;color:white;padding:4vh 0 4vh 4vh;">
+<li>Choose any number you want(the hand gesture images)</li>
+<li>If the number are same of both you and computer then you are out and vice cersa.</li>
+<li>The one to score the most runs wins</li>
+<li>Once you or the computer are out the other will have his turn to bat!</li>
+</ul>
+</p>
+
+
+<center>
+<div id="ab" style="width:50vh;height:auto;padding-top:25px;padding-bottom:25px;border-radius: 20px;" >
+<center>
+<button class="b" type="button" onclick='
+if(runs.z<2&&runs.y===0){
+runs.y=1;
+document.getElementById("cc").innerHTML="YOU CHOOSE TO BAT FIRST PLEASE START THE MATCH!";
+text.g="YOU CHOOSE TO BAT FIRST PLEASE START THE MATCH!";
+window.localStorage.setItem("text", JSON.stringify(text));
+window.localStorage.setItem("runs", JSON.stringify(runs));
+}
+else
+	alert("PLEASE RESET THE SCORE FOR A NEW GAME.");
+'>
+BAT FIRST!
+</button>
+
+<button class="b" type="button" onclick='
+if(runs.z<2&&runs.y===0){
+runs.y=2;
+document.getElementById("cc").innerHTML="YOU CHOOSE TO BOWL FIRST PLEASE START THE MATCH!";
+text.g="YOU CHOOSE TO BOWL FIRST PLEASE START THE MATCH!";
+window.localStorage.setItem("text", JSON.stringify(text));
+window.localStorage.setItem("runs", JSON.stringify(runs));
+}
+else
+	alert("PLEASE RESET THE SCORE FOR A NEW GAME.");
+'>
+BOWL FIRST!
+</button>
+<button class="b1" type="button" onclick="
+      	runs.z=0;
+	runs.x1=0;
+	runs.x2=0;
+	runs.y=0;
+	runs.f=1;
+	text.g='';
+	text.h='';
+      	window.localStorage.removeItem('runs');
+	window.localStorage.removeItem('text');
+	clearcontent('dis');
+	clearcontent('dix');
+	clearcontent('cc');
+	const img1=document.createElement('img');
+	img1.src='./image/bc.png';
+	const cl=document.getElementById('c1');
+	let exi = cl.querySelector('img');
+	if(exi)
+	cl.replaceChild(img1.cloneNode(true), exi);
+	const ul=document.getElementById('u1');
+	exi = ul.querySelector('img');
+	if(exi)
+	ul.replaceChild(img1.cloneNode(true), exi);
+	/*const cl=document.getElementById('c1');
+	let exi=cl.querySelector('img');*/
+    ">Reset Score</button>
+</center>
+</div>
+</center>
+<br/>
+
+<div id="cc" style="background-color:yellow;font-size:5vh;font-family:Rye Static;text-align:center">
+</div>
+<br/>
+<br/>
+<div style="display:grid;grid-template-columns:25% 50% 25%">
+<center>
+<div id=u1 >
+	USER PICKED:<br/>
+</div>
+</center>
+<center>
+<div style="background-color:#16325B;width:50vh;height:auto;padding-top:25px;padding-bottom:25px;" >
+<button type="button" onclick='
+u=1;
+comparison(u);
+'>
+<img src="./image/one.png" style="height:73px;width:74px;">
+</button>
+<button type="button" onclick='
+u=2;
+comparison(u);
+'>
+<img src="./image/two.png" style="height:73px;width:74px;">
+</button>
+<button type="button" onclick='
+u=3;
+comparison(u);
+'>
+<img src="./image/three.png" style="height:73px;width:74px;">
+</button>
+<button type="button" onclick='
+u=4;
+comparison(u);
+'>
+<img src="./image/four.png" style="height:73px;width:74px;">
+</button>
+<button type="button" onclick='
+u=5;
+comparison(u);
+'>
+<img src="./image/five.png" style="height:73px;width:74px;">
+</button>
+
+
+
+    
+</div>
+</center>
+
+
+<center>
+<div id=c1 >
+	COMP PICKED:<br/>
+</div>
+</center>
+
+<br/>
+</div>
+
+
+<div id="dis" style="background-color:yellow;font-size:5vh;font-family:Rye;text-align:center">
+</div>
+<br/>
+<center>
+<div id="dix" style="font-size:5vh;font-family:VT323;text-align:center;color:red;height:auto;width:25vh;">
+</div>
+
+</center>
+
+
+
+
+<script>
+document.getElementById("listu").style.listStyleType = "square";
+let u=0;
+let comp=0;
+let i=0;
+
+runs= JSON.parse(window.localStorage.getItem('runs')) || {
+z:0,
+x1:0,
+x2:0,
+y:0,
+f:1
+};
+
+
+text= JSON.parse(window.localStorage.getItem('text')) || {
+g:"",
+h:""
+};
+
+
+
+let imgs=["./image/one.png","./image/two.png","./image/three.png","./image/four.png","./image/five.png"];
+
+
+function clearcontent(elementID) { 
+            document.getElementById(elementID).innerHTML = ""; 
+        } 
+
+function c_m()
+{
+let r=0;
+let c=0;
+r=Math.random();
+/*if(r>0&&r<1/5)
+c=1;
+if(r>1/5&&r<2/5)
+c=2;
+if(r>2/5&&r<3/5)
+c=3;
+if(r>3/5&&r<4/5)
+c=4;
+if(r>4/5&&r<1)
+c=5;*/
+c=Math.ceil(Math.random() * 5);
+return c;
+}
+
+
+function imgcont(user,comp)
+{
+const cl=document.getElementById("c1");
+const ul=document.getElementById("u1");
+if(cl!==null)
+{
+i=comp-1;
+let img1=document.createElement('img');
+img1.src=imgs[i];
+ img1.height = "200";
+ img1.width = "200";
+const exi = cl.querySelector('img');
+if(exi)
+	cl.replaceChild(img1.cloneNode(true), exi);
+else
+	cl.appendChild(img1.cloneNode(true));
+}
+if(ul!==null)
+{
+i=user-1;
+let img2=document.createElement('img');
+img2.src=imgs[i];
+  img2.height = "200";
+  img2.width = "200";
+const exi = ul.querySelector('img');
+if(exi)
+	ul.replaceChild(img2.cloneNode(true), exi);
+else
+	ul.appendChild(img2.cloneNode(true));
+}
+}
+
+
+function userchoice(user)
+{
+comp=c_m();
+/*console.log(`C:${comp}`);
+console.log(`U:${user}`);*/
+imgcont(user,comp);
+if(user===comp){
+	alert(`You picked ${user}.Computer picked ${comp}.You are out!`);
+	
+	runs.z+=1;
+	if(runs.z<2)
+	runs.y=2;
+}
+else
+	runs.x1+=user;
+window.localStorage.setItem('runs', JSON.stringify(runs));
+}
+
+function compchoice(user)
+{
+comp=c_m();
+/*console.log(`C:${comp}`);
+console.log(`U:${user}`);*/
+imgcont(user,comp);
+if(user===comp){
+	alert(`You picked ${user}.Computer picked ${comp}.computer is out!`);
+	
+	runs.z+=1;
+	if(runs.z<2)
+	runs.y=1;
+
+}
+
+else
+	runs.x2+=comp;
+window.localStorage.setItem('runs', JSON.stringify(runs));
+}
+
+function comparison(user)
+{
+	console.log(`Y:${runs.y}`);
+	console.log(`X1:${runs.x1}`);
+	console.log(`X2:${runs.x2}`);
+	console.log(`Z:${runs.z}`);
+	window.localStorage.setItem('runs', JSON.stringify(runs));
+	
+	if(runs.y!==0)
+	{
+	if(runs.z<2)
+	{
+	if(runs.y===1)
+		userchoice(user);
+	else if(runs.y===2)
+		compchoice(user);
+	}
+	whotob();
+	if((runs.z===2)||(runs.x1>runs.x2&&runs.y===1&&runs.z===1)||(runs.x1<runs.x2&&runs.y===2&&runs.z===1))
+	{
+		if(runs.z===1)
+			runs.z+=1;
+	alert(`Final Score of user:${runs.x1}   Final Score of Computer:${runs.x2}`);
+	if(runs.x1>runs.x2){
+		document.getElementById("dix").innerHTML=`You Win By ${runs.x1-runs.x2}`;
+		text.h=`You Win By ${runs.x1-runs.x2}`;}
+	else if(runs.x1<runs.x2){
+		document.getElementById("dix").innerHTML=`You Lose By ${runs.x2-runs.x1}`;
+		text.h=`You Lose By ${runs.x2-runs.x1}`;}
+	else if(runs.x1===runs.x2){
+		document.getElementById("dix").innerHTML=`Game is Tied`;
+		text.h=`Game is Tied`;}
+	}
+	}
+	else
+	alert(`PLEASE SELECT WETHER YOU WANT TO BAT OR BOWL`);
+	document.getElementById("dis").innerHTML="Your Score:    "+runs.x1+"&nbsp&nbsp&nbspComputer Score:   "+runs.x2 ;
+	window.localStorage.setItem('text', JSON.stringify(text));
+}
+
+window.localStorage.setItem('text', JSON.stringify(text));
+document.getElementById("dis").innerHTML="Your Score:    "+runs.x1+"&nbsp&nbsp&nbspComputer Score:   "+runs.x2 ;
+document.getElementById("cc").innerHTML=text.g ;
+document.getElementById("dix").innerHTML=text.h ;
+	
+
+
+    /*function toggleDivVisibility(divId) {
+      let div = document.getElementById(divId);
+	console.log(`${div}`);
+      let currentState = localStorage.getItem(divId); // Check if state exists
+	console.log(`${currentState}`);
+	let new1="";
+      if(currentState === 'hidden')
+	new1='visible';
+      else
+	new1=currentState;
+	console.log(`${new1}`);
+      div.style.display = new1 === 'visible' ? 'block' : 'none';
+      localStorage.setItem(divId,new1);
+    }*/
+
+
+function whotob()
+{	
+	if(runs.f===1)
+	{	
+	if(runs.y===1&&runs.z===1){
+		runs.f=0;
+		alert("COMPUTER IS OUT.ITS YOUR TURN TO BAT!");}
+	else if(runs.y===2&&runs.z===1){
+		runs.f=0;
+		alert("YOU ARE OUT.ITS YOUR TURN TO BOWL!");}
+	}
+}
+
+</script>
+</body>
+</html>
